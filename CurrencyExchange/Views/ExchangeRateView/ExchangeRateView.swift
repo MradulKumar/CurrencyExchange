@@ -16,7 +16,9 @@ struct ExchangeRateView: View {
     
     @State var showDropdown: Bool = false
     @State private var scrollPosition: Int?
-    @State var girdItems: [GridItem] = [GridItem(.adaptive(minimum: 100, maximum: 150))]
+    @State var girdItems: [GridItem] = [GridItem(.flexible(minimum: 50, maximum: 150)),
+                                        GridItem(.flexible(minimum: 50, maximum: 150)),
+                                        GridItem(.flexible(minimum: 50, maximum: 150))]
     
     @StateObject var viewModel = ExchangeRateViewModel()
     
@@ -113,7 +115,7 @@ struct ExchangeRateView: View {
                     
                     //currencies
                     ScrollView {
-                        LazyVGrid(columns: girdItems, alignment: .leading, spacing: 8.0, content: {
+                        LazyVGrid(columns: girdItems, alignment: .center, spacing: 8.0, content: {
                             ForEach(viewModel.currencyList) { currency in
                                 let valueText = String(format: "%0.2f", (currency.value))
                                 CurrencyView(currencyCode: currency.currencyCode, currencyValue: valueText)

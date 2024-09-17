@@ -13,21 +13,24 @@ struct CurrencyView: View {
     let currencyValue: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(currencyCode)
-                .font(.title2)
-                .fontWeight(.none)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-
-            Text(currencyValue)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
+        ZStack(alignment: .center) {
+            Rectangle()
+                .fill(.gray.opacity(0.2))
+            VStack {
+                Text(currencyCode)
+                    .font(.title2)
+                    .fontWeight(.none)
+                    .scaledToFit()
+                    .minimumScaleFactor(0.5)
+                
+                Text(currencyValue)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .scaledToFit()
+                    .minimumScaleFactor(0.8)
+            }
+            .padding()
         }
-        .padding()
-        .cornerRadius(4.0)
     }
 }
 

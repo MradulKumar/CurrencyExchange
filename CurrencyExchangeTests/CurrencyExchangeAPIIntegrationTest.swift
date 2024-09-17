@@ -8,7 +8,7 @@
 import XCTest
 @testable import CurrencyExchange
 
-final class CurrencyExchangeApiIntegrationTest: XCTestCase {
+final class CurrencyExchangeAPIIntegrationTest: XCTestCase {
     
     private var networkManager: NetworkManager!
     
@@ -22,7 +22,7 @@ final class CurrencyExchangeApiIntegrationTest: XCTestCase {
         networkManager = nil
     }
     
-    func test_success_API() throws {
+    func test_getExchangeRateData_API_Success() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
@@ -41,7 +41,7 @@ final class CurrencyExchangeApiIntegrationTest: XCTestCase {
         }
     }
     
-    func test_fail_API() throws {
+    func test_getExchangeRateData_API_failure() throws {
         Task {
             networkManager.getExchangeRateData(with: "INR") { result in
                 switch result {

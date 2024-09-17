@@ -28,4 +28,8 @@ struct AccessibilitiyIdentifiers {
     //Buttons - Currency
     static let USDButton = "USDButton"
     static let AEDButton = "AEDButton"
+    
+    //Currency
+    static let usDollar = "USD"
+    static let inRupee = "INR"
 }

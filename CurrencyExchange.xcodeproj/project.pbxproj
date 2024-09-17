@@ -33,7 +33,7 @@
 		F8173F5B2C9876F700B9947B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F5A2C9876F700B9947B /* Strings.swift */; };
 		F8173F642C9958F400B9947B /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F622C9958F400B9947B /* MockData.swift */; };
 		F8173F652C9958F400B9947B /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F632C9958F400B9947B /* MockNetworkManager.swift */; };
-		F8173F672C99592000B9947B /* CurrencyExchangeApiIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F662C99592000B9947B /* CurrencyExchangeApiIntegrationTest.swift */; };
+		F8173F672C99592000B9947B /* CurrencyExchangeAPIIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F662C99592000B9947B /* CurrencyExchangeAPIIntegrationTest.swift */; };
 		F8173F692C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F682C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,7 @@
 		F8173F5A2C9876F700B9947B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		F8173F622C9958F400B9947B /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		F8173F632C9958F400B9947B /* MockNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
-		F8173F662C99592000B9947B /* CurrencyExchangeApiIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeApiIntegrationTest.swift; sourceTree = "<group>"; };
+		F8173F662C99592000B9947B /* CurrencyExchangeAPIIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeAPIIntegrationTest.swift; sourceTree = "<group>"; };
 		F8173F682C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModelMockUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 				F8173F612C994A8200B9947B /* TestableCode */,
 				F8173F432C9820E700B9947B /* App */,
 				F8173F372C9820E700B9947B /* Assets */,
-				F8173F312C9820E700B9947B /* Extras */,
+				F8173F312C9820E700B9947B /* MockData */,
 				F8173F242C9820E700B9947B /* Models */,
 				F8173F332C9820E700B9947B /* Network */,
 				F8173F452C9820E700B9947B /* Preview Content */,
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F8173F0A2C9820BE00B9947B /* CurrencyExchangeTests.swift */,
-				F8173F662C99592000B9947B /* CurrencyExchangeApiIntegrationTest.swift */,
+				F8173F662C99592000B9947B /* CurrencyExchangeAPIIntegrationTest.swift */,
 				F8173F682C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift */,
 			);
 			path = CurrencyExchangeTests;
@@ -236,12 +236,12 @@
 			path = MockDataJson;
 			sourceTree = "<group>";
 		};
-		F8173F312C9820E700B9947B /* Extras */ = {
+		F8173F312C9820E700B9947B /* MockData */ = {
 			isa = PBXGroup;
 			children = (
 				F8173F302C9820E700B9947B /* MockDataJson */,
 			);
-			path = Extras;
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		F8173F332C9820E700B9947B /* Network */ = {
@@ -504,7 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8173F572C98218700B9947B /* AccessibilitiyIdentifiers.swift in Sources */,
-				F8173F672C99592000B9947B /* CurrencyExchangeApiIntegrationTest.swift in Sources */,
+				F8173F672C99592000B9947B /* CurrencyExchangeAPIIntegrationTest.swift in Sources */,
 				F8173F692C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift in Sources */,
 				F8173F0B2C9820BE00B9947B /* CurrencyExchangeTests.swift in Sources */,
 			);
