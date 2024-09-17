@@ -26,7 +26,7 @@ struct CurrencyDetailView: View {
                 let title = "\(amount) \(baseCurrency.currencyCode) is euqal to \(currency.value) \(currency.currencyCode)"
                 Text(title)
                     .font(.title2)
-                    .fontWeight(.semibold)
+                    .fontWeight(.regular)
                     .padding()
                 
                 Spacer()
@@ -36,6 +36,7 @@ struct CurrencyDetailView: View {
                     Text(text)
                         .multilineTextAlignment(.center)
                         .font(.body)
+                        .fontWeight(.semibold)
                         .padding()
                 }
                 
