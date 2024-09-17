@@ -32,7 +32,7 @@ struct ExchangeRateView: View {
                         .textFieldStyle(.roundedBorder)
                         .frame(height: 45, alignment: .center)
                         .padding(.horizontal, 6.0)
-                        .background(.gray.gradient)
+                        .background(Color.gray.opacity(0.8).gradient)
                         .cornerRadius(4.0)
                         .submitLabel(.done)
                         .onSubmit {
@@ -105,7 +105,7 @@ struct ExchangeRateView: View {
                         }
                         .font(.title2)
                         .foregroundColor(Color(uiColor: .systemBackground))
-                        .background(RoundedRectangle(cornerRadius: 4.0).fill(Color.gray.gradient))
+                        .background(RoundedRectangle(cornerRadius: 4.0).fill(Color.gray.opacity(0.8).gradient))
                     }
                     .frame(height: buttonHeight, alignment: .top)
                     .zIndex(1)
@@ -118,7 +118,11 @@ struct ExchangeRateView: View {
                         LazyVGrid(columns: girdItems, alignment: .center, spacing: 8.0, content: {
                             ForEach(viewModel.currencyList) { currency in
                                 let valueText = String(format: "%0.2f", (currency.value))
-                                CurrencyView(currencyCode: currency.currencyCode, currencyValue: valueText)
+                                CurrencyGridCell(currencyCode: currency.currencyCode, currencyValue: valueText)
+                                    .onTapGesture {
+                                        viewModel.detailViewCurrency = currency
+                                        viewModel.isShowingDetail = true
+                                    }
                             }
                         })
                     }
@@ -147,6 +151,13 @@ struct ExchangeRateView: View {
             if viewModel.noInternet {
                 NoInternetView(viewModel: viewModel)
                     .accessibilityIdentifier(AccessibilitiyIdentifiers.noInternetView)
+            }
+            
+            if viewModel.isShowingDetail {
+                CurrencyDetailView(baseCurrency: viewModel.selectedCurrency ?? sampleCurrency,
+                                   currency: viewModel.detailViewCurrency ?? sampleCurrency,
+                                   amount: viewModel.getAmount(),
+                                   isShowingDetail: $viewModel.isShowingDetail)
             }
         }
         .alert(item: $viewModel.alertItem) { alertItem in

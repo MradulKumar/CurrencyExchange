@@ -34,6 +34,8 @@ final class ExchangeRateViewModel: ObservableObject {
     @Published var isRefreshing: Bool = false
     @Published var noInternet: Bool = false
     
+    @Published var detailViewCurrency: CurrencyData? = sampleCurrency
+    @Published var isShowingDetail: Bool = false
     
     func getExchangeRateData() {
         //showing a progress view on top of everything

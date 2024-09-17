@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CurrencyView: View {
+struct CurrencyGridCell: View {
     
     let currencyCode: String
     let currencyValue: String
@@ -36,6 +36,6 @@ struct CurrencyView: View {
 
 struct CurrencyView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyView(currencyCode: "USD", currencyValue: "1.2345")
+        CurrencyGridCell(currencyCode: "USD", currencyValue: "1.2345")
     }
 }

@@ -29,3 +29,5 @@ struct CurrencyData: Identifiable {
     var currencyCode: String
     var value: Double
 }
+
+let sampleCurrency = CurrencyData(currencyCode: "USD", value: 1.0)
