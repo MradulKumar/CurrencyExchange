@@ -28,18 +28,20 @@ struct CurrencyDetailView: View {
                     .font(.title2)
                     .fontWeight(.regular)
                     .padding()
+                    .onAppear {
+                        print("amount: \(amount), baseCurrency: \(baseCurrency.value), currency: \(currency.value)")
+                    }
                 
                 Spacer()
                 
                 if amount != 1 {
-                    let text = "* \(1) \(baseCurrency.currencyCode) is euqal to \(currency.value/(baseCurrency.value*amount)) \(currency.currencyCode)"
+                    let text = "* \(1) \(baseCurrency.currencyCode) is euqal to \(currency.value/amount) \(currency.currencyCode)"
                     Text(text)
                         .multilineTextAlignment(.center)
                         .font(.body)
                         .fontWeight(.semibold)
                         .padding()
                 }
-                
                 Spacer()
             }
         }
