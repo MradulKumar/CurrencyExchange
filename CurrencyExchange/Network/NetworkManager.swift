@@ -32,7 +32,7 @@ final class NetworkManager {
     private func getExchangeRateUrl(with baseCurrencyCode: String? = nil) -> String {
         var exchangeRateUrl = baseURL + "?app_id=" + appId
         if let base = baseCurrencyCode {
-            exchangeRateUrl = exchangeRateUrl + "?base=" + base
+            exchangeRateUrl = exchangeRateUrl + "&base=" + base
         }
         return exchangeRateUrl
     }
