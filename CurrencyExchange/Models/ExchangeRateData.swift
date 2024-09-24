@@ -7,7 +7,6 @@
 
 import Foundation
 
-///
 struct ExchangeRateData: Codable {
     var disclaimer: String?
     var license: String?

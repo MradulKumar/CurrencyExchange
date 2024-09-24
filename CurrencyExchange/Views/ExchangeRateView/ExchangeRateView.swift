@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ExchangeRateView: View {
     
     var menuWdith: CGFloat = 150
@@ -26,7 +27,6 @@ struct ExchangeRateView: View {
         ZStack {
             NavigationView {
                 VStack {
-                    
                     //text field
                     TextField(text_placeholderAmount, text: $viewModel.amount)
                         .textFieldStyle(.roundedBorder)
@@ -105,7 +105,7 @@ struct ExchangeRateView: View {
                         }
                         .font(.title2)
                         .foregroundColor(Color(uiColor: .systemBackground))
-                        .background(RoundedRectangle(cornerRadius: 4.0).fill(Color.gray.opacity(0.8).gradient))
+                        .background(RoundedRectangle(cornerRadius: 4.0).fill(Color.gray.gradient))
                     }
                     .frame(height: buttonHeight, alignment: .top)
                     .zIndex(1)

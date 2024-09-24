@@ -16,18 +16,7 @@ final class NetworkManager {
     private let appId = "5a35ac2fa9c94b7a9b31265a99200879"
     private let baseURL = "https://openexchangerates.org/api/latest.json"
     
-    @AppStorage("cachedResponseTTL") private var cachedResponseTTL: TimeInterval?
-    
-    private init() {
-        setUpURLCache()
-    }
-    
-    private func setUpURLCache() {
-        let memoryCapacity = 5 * 1024 * 1024 // 5 MB
-        let diskCapacity = 20 * 1024 * 1024 // 20 MB
-        let urlCache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "myCache")
-        URLCache.shared = urlCache
-    }
+    private init() { }
     
     private func getExchangeRateUrl(with baseCurrencyCode: String? = nil) -> String {
         var exchangeRateUrl = baseURL + "?app_id=" + appId
@@ -51,21 +40,6 @@ final class NetworkManager {
         urlRequest.cachePolicy = .returnCacheDataElseLoad
         urlRequest.timeoutInterval = 15.0
         
-        //check for TTL and response
-        //if there is cached response available then
-        //return data from cached response
-        let currentTimeInterval = Date.timeIntervalSinceReferenceDate
-        if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest),
-           (currentTimeInterval < (cachedResponseTTL ?? 0)) {
-            if let exchangeRateData = try? cachedResponse.data.decodeTo(ExchangeRateData.self) {
-                completion(.success(exchangeRateData))
-                return
-            }
-        }
-        
-        //remove if there is any cached data for that particular url request
-        URLCache.shared.removeCachedResponse(for: urlRequest)
-        
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let _ = error {
                 completion(.failure(.unableToComplete))
@@ -83,13 +57,11 @@ final class NetworkManager {
             }
             
             do {
+                //storing data
+                StorageManager.shared.saveData(data, forKey: UserDefaultKeys.apiResponseKey)
+                
+                //data to model
                 let exchangeRateData = try data.decodeTo(ExchangeRateData.self)
-                
-                let ttl: TimeInterval = 30*60 // 30 Min - 1800 Seconds
-                self.cachedResponseTTL = Date.timeIntervalSinceReferenceDate + ttl
-                let cachedResponse = CachedURLResponse(response: response, data: data)
-                URLCache.shared.storeCachedResponse(cachedResponse, for: urlRequest)
-                
                 completion(.success(exchangeRateData))
             } catch {
                 completion(.failure(.invalidData))

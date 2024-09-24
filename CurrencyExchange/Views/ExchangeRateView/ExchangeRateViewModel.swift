@@ -61,7 +61,7 @@ final class ExchangeRateViewModel: ObservableObject {
         //setting no internet flag false before request
         noInternet = false
         //fetching data
-        fetchExchangeData(with: selectedCurrency?.currencyCode) { [weak self] result in
+        fetchExchangeData(ignoreCachedData: true) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 //hide progressview
@@ -72,9 +72,18 @@ final class ExchangeRateViewModel: ObservableObject {
         }
     }
     
-    func fetchExchangeData(with baseCurrencyCode: String? = nil,
+    func fetchExchangeData(ignoreCachedData: Bool = false,
                            completion: @escaping(Result<ExchangeRateData, NetworkError>) -> Void) {
-        NetworkManager.shared.getExchangeRateData(with: baseCurrencyCode) { result in
+        
+        //if Ignore cached data : then stored data will be ignored and new data will be fetched
+        if !ignoreCachedData {
+            if let data = try? StorageManager.shared.getSavedExchangeData() {
+                completion(Result.success(data))
+                return
+            }
+        }
+        
+        NetworkManager.shared.getExchangeRateData() { result in
             completion(result)
         }
     }
@@ -115,7 +124,7 @@ private extension ExchangeRateViewModel {
     
     func refreshExchangeRateAsPerSelectedCurrency(_ previousValue: CurrencyData?) {
         if previousValue == nil || previousValue?.currencyCode == selectedCurrency?.currencyCode { return }
-        refreshExchangeRateData()
+        updateCurrencyListAsPerLocalAvailableData()
     }
     
     func processExchangeRateData(result: Result<ExchangeRateData, NetworkError>) {

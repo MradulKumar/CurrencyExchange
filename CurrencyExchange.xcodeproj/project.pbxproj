@@ -37,6 +37,8 @@
 		F8173F692C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F682C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift */; };
 		F891B5572C998B70001F52A5 /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891B5562C998B70001F52A5 /* CurrencyDetailView.swift */; };
 		F891B55A2C998BD0001F52A5 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891B5592C998BD0001F52A5 /* DismissButton.swift */; };
+		F8F300562CA1B54800D4A697 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F300552CA1B54800D4A697 /* StorageManager.swift */; };
+		F8F300592CA1B6F900D4A697 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F300582CA1B6F900D4A697 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		F8173F682C99593400B9947B /* CurrencyExchangeViewModelMockUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModelMockUnitTests.swift; sourceTree = "<group>"; };
 		F891B5562C998B70001F52A5 /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
 		F891B5592C998BD0001F52A5 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		F8F300552CA1B54800D4A697 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F8F300582CA1B6F900D4A697 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +142,13 @@
 		F8173EF82C9820BD00B9947B /* CurrencyExchange */ = {
 			isa = PBXGroup;
 			children = (
+				F8F300572CA1B6E800D4A697 /* Constants */,
 				F8173F612C994A8200B9947B /* TestableCode */,
 				F8173F432C9820E700B9947B /* App */,
 				F8173F372C9820E700B9947B /* Assets */,
 				F8173F312C9820E700B9947B /* MockData */,
 				F8173F242C9820E700B9947B /* Models */,
+				F8F300542CA1B52900D4A697 /* StorageManager */,
 				F8173F332C9820E700B9947B /* Network */,
 				F8173F452C9820E700B9947B /* Preview Content */,
 				F8173F352C9820E700B9947B /* UIViews */,
@@ -369,6 +375,22 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		F8F300542CA1B52900D4A697 /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				F8F300552CA1B54800D4A697 /* StorageManager.swift */,
+			);
+			path = StorageManager;
+			sourceTree = "<group>";
+		};
+		F8F300572CA1B6E800D4A697 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F8F300582CA1B6F900D4A697 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,9 +530,11 @@
 				F8173F4E2C9820E700B9947B /* ActivityIndicatorView.swift in Sources */,
 				F8173F4B2C9820E700B9947B /* NoInternetView.swift in Sources */,
 				F8173F482C9820E700B9947B /* ExchangeRateView.swift in Sources */,
+				F8F300562CA1B54800D4A697 /* StorageManager.swift in Sources */,
 				F8173F492C9820E700B9947B /* ExchangeRateViewModel.swift in Sources */,
 				F8173F5B2C9876F700B9947B /* Strings.swift in Sources */,
 				F8173F462C9820E700B9947B /* ExchangeRateData.swift in Sources */,
+				F8F300592CA1B6F900D4A697 /* Constants.swift in Sources */,
 				F8173F502C9820E700B9947B /* AccessibilitiyIdentifiers.swift in Sources */,
 				F891B55A2C998BD0001F52A5 /* DismissButton.swift in Sources */,
 				F8173F522C9820E700B9947B /* ErrorData.swift in Sources */,
