@@ -27,7 +27,6 @@
 		F8173F522C9820E700B9947B /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F3C2C9820E700B9947B /* ErrorData.swift */; };
 		F8173F532C9820E700B9947B /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F3E2C9820E700B9947B /* Data+Ext.swift */; };
 		F8173F542C9820E700B9947B /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F3F2C9820E700B9947B /* FileManager+Ext.swift */; };
-		F8173F562C9820E700B9947B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8173F442C9820E700B9947B /* Preview Assets.xcassets */; };
 		F8173F572C98218700B9947B /* AccessibilitiyIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F382C9820E700B9947B /* AccessibilitiyIdentifiers.swift */; };
 		F8173F582C98218D00B9947B /* AccessibilitiyIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F382C9820E700B9947B /* AccessibilitiyIdentifiers.swift */; };
 		F8173F5B2C9876F700B9947B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8173F5A2C9876F700B9947B /* Strings.swift */; };
@@ -82,7 +81,6 @@
 		F8173F3C2C9820E700B9947B /* ErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorData.swift; sourceTree = "<group>"; };
 		F8173F3E2C9820E700B9947B /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		F8173F3F2C9820E700B9947B /* FileManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
-		F8173F442C9820E700B9947B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8173F5A2C9876F700B9947B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		F8173F622C9958F400B9947B /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		F8173F632C9958F400B9947B /* MockNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				F8173F242C9820E700B9947B /* Models */,
 				F8F300542CA1B52900D4A697 /* StorageManager */,
 				F8173F332C9820E700B9947B /* Network */,
-				F8173F452C9820E700B9947B /* Preview Content */,
 				F8173F352C9820E700B9947B /* UIViews */,
 				F8173F412C9820E700B9947B /* Utilities */,
 				F8173F2E2C9820E700B9947B /* Views */,
@@ -333,15 +330,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		F8173F452C9820E700B9947B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F8173F442C9820E700B9947B /* Preview Assets.xcassets */,
-			);
-			name = "Preview Content";
-			path = "../../PayPayAssignment/CurrencyExchanger/Preview Content";
-			sourceTree = "<group>";
-		};
 		F8173F592C9876E900B9947B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,7 +485,6 @@
 			files = (
 				F8173F012C9820BE00B9947B /* Preview Assets.xcassets in Resources */,
 				F8173F4C2C9820E700B9947B /* ExchangeRateSample.json in Resources */,
-				F8173F562C9820E700B9947B /* Preview Assets.xcassets in Resources */,
 				F8173F4F2C9820E700B9947B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
