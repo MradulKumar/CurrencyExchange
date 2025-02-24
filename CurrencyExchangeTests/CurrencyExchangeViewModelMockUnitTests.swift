@@ -15,8 +15,7 @@ final class CurrencyExchangeViewModelMockUnitTests: XCTestCase {
     private var mockNetwork: MockNetworkManager?
     private let mockDataFileName: String = "ExchangeRateSample"
     
-    override class func setUp() {
-    }
+    override class func setUp() { }
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
