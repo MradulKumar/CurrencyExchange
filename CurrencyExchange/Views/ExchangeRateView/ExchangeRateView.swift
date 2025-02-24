@@ -14,7 +14,6 @@ struct ExchangeRateView: View {
     var buttonHeight: CGFloat = 50
     var maxItemDisplayed: Int = 10
     
-    
     @State var showDropdown: Bool = false
     @State private var scrollPosition: Int?
     @State var girdItems: [GridItem] = [GridItem(.flexible(minimum: 50, maximum: 150)),
